@@ -1,191 +1,194 @@
 <div align="center">
 
-# 🌿 Raíz Comunitaria Mixteca
-### *Infraestructura Pública Abierta de Trazabilidad Descentralizada, IA Multimodal y Comercio Justo en Stellar para Productores Indígenas*
+# 🌿 Raíz: Community Origin Traceability & Fair Trade
+### *Open Public Infrastructure for Decentralized Traceability, Multimodal AI, and Fair Trade on Stellar for Indigenous Producers*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](https://opensource.org/licenses/MIT)
 [![Drips: Verified Public Good](https://img.shields.io/badge/Drips-Funded%20Public%20Good-blueviolet.svg)](https://www.drips.network/)
 [![Stellar: Built on Horizon & Soroban](https://img.shields.io/badge/Stellar-Soroban%20%7C%20Horizon-black.svg?logo=stellar)](https://stellar.org)
-[![Institution: TecNM Campus Tlaxiaco](https://img.shields.io/badge/Desarrollo-TecNM%20Tlaxiaco-b45309.svg)](http://tlaxiaco.tecnm.mx/)
-[![Status: MVP Pilot Ready](https://img.shields.io/badge/Estado-Piloto%20Activo%20v1.0-success.svg)]()
+[![Institution: TecNM Campus Tlaxiaco](https://img.shields.io/badge/Development-TecNM%20Tlaxiaco-b45309.svg)](http://tlaxiaco.tecnm.mx/)
+[![Status: MVP Pilot Active v1.0](https://img.shields.io/badge/Status-Active%20Pilot%20v1.0-success.svg)]()
 
 <p align="center">
-  <b>Desarrollado por un equipo de estudiantes e investigadores del Instituto Tecnológico de Tlaxiaco (Oaxaca, México)</b>
+  <b>Developed by a student research & engineering team at Instituto Tecnológico de Tlaxiaco (Oaxaca, Mexico)</b>
   <br>
-  <i>Candidato a financiamiento en <b>Drips Protocol</b> y en el <b>Stellar Community Fund (SCF)</b></i>
+  <i>Candidate for continuous public goods funding on <b>Drips Protocol</b> and milestone grants in the <b>Stellar Community Fund (SCF)</b></i>
 </p>
 
-[Visión General](#-visión-general) • [Impacto Social](#-impacto-social-y-justificación) • [Arquitectura Técnica](#-arquitectura-técnica) • [Integración Stellar & Soroban](#-integración-con-stellar--soroban) • [Ruta de Desarrollo & Hitos](#-ruta-de-desarrollo--hitos-scf--drips) • [Instalación](#-instalación-y-despliegue) • [Equipo](#-equipo-y-gobernanza)
+[Overview](#-overview) • [Social Impact](#-social-impact--problem-statement) • [System Architecture](#-system-architecture) • [Stellar & Soroban Integration](#-stellar--soroban-integration) • [Roadmap & Milestones](#-development-roadmap--milestones-scf--drips) • [Installation & Setup](#-installation--local-development) • [Team & Governance](#-team--governance)
 
 ---
 
 </div>
 
-## 📌 Visión General
+## 📌 Overview
 
-**Raíz Comunitaria Mixteca** es una plataforma de bien público digital (*Public Good*) diseñada para conectar a pequeños productores indígenas y adultos mayores de la región Mixteca de Oaxaca (México) con mercados de comercio justo directo, eliminando el intermediarismo abusivo (*coyotaje*).
+**Raíz** is an open-source digital public good created to empower smallholder indigenous producers and elderly farmers in the Mixteca Highlands of Oaxaca, Mexico. It bridges rural cooperatives with direct fair-trade global buyers, systematically eliminating extractive intermediaries (*coyotaje*).
 
-Combinando **Inteligencia Artificial Multimodal (Visión por Computadora)** para la evaluación instantánea de calidad y la **red descentralizada Stellar (Horizon y Soroban)** para la certificación inmutable mediante el **Pasaporte Digital de Origen**, Raíz permite que cosechas de **Café Pergamino**, **Pulque Tradicional de Maguey**, **Miel Virgen**, **Maíz Nativo** y **Textiles en Telar de Cintura** cuenten con un historial transparente, verificable y con pagos directos.
+By combining **Multimodal Computer Vision AI (Gemini 2.5)** for instant on-field crop quality diagnosis with the **Stellar Network (Horizon & Soroban Smart Contracts)** for cryptographic immutability through a **Digital Origin Passport**, Raíz provides authentic verifiable traceability for **Specialty Parchment Coffee**, **Traditional Maguey Pulque & Aguamiel**, **Wild Honey**, **Native Heirloom Corn**, and **Backstrap Loom Handwoven Textiles**.
 
-### ¿Por qué es un Bien Público Digital financiable en Drips y Stellar SCF?
+### Why Raíz is a Candidate for Drips and Stellar SCF Funding
 
-1. **Inclusión Financiera y Tecnológica Radical**: Desarrollada pensando en productores de 60+ años y hablantes de lenguas originarias (Tu'un Savi / Mixteco), con una interfaz conversacional asistida por voz (Text-to-Speech), notas de audio y cero fricción burocrática.
-2. **Código Abierto y Neutralidad**: Software 100% de código abierto bajo licencia MIT, sin comisiones extractivas ni custodia forzada de fondos.
-3. **Casos de Uso Real en Stellar (RWA y Trazabilidad)**: Registra cada lote como un activo digital respaldado por hashes criptográficos inmutables en Stellar Horizon Testnet / Soroban.
-4. **Impulso al Talento Universitario Local**: Proyecto incubado y programado por estudiantes de ingeniería del **TecNM Campus Tlaxiaco**, generando soberanía tecnológica en una de las zonas con mayor rezago económico del país.
-
----
-
-## 🎯 Impacto Social y Justificación
-
-### La Problemática
-En la Mixteca Alta oaxaqueña, el 80% de los productores agrícolas y artesanos son personas mayores que enfrentan:
-- **Intermediarios especulativos:** Compran el kilo de café o el litro de pulque a un 25% de su valor real de mercado.
-- **Barrera de digitalización:** Las apps bancarias y de comercio electrónico tradicionales son inaccesibles para personas no alfabetizadas digitalmente.
-- **Falta de certificación accesible:** Los laboratorios de calidad cobran costos prohibitivos y tardan semanas en emitir dictámenes.
-
-### La Solución de Raíz
-- **Evaluación Visual con IA en el Terreno**: Una sola foto del grano de café o del tinacal de pulque es analizada por el modelo de visión computacional para detectar porcentaje de humedad, plagas (broca), defectos o pureza al instante.
-- **Pasaporte Digital de Origen**: Cada lote aprobado genera un código QR y un sello criptográfico inmutable en la red Stellar que el consumidor final puede escanear en cualquier parte del mundo.
-- **Liquidación Justa y Directa**: Los compradores pagan directamente al productor mediante micropagos instantáneos y transparentes.
+1. **Radical Technological & Financial Inclusion**: Built specifically for elder adults (60+ years old) and speakers of indigenous languages (Tu'un Savi / Mixteco), featuring conversational voice-assisted guidance (Text-to-Speech), hands-free audio notes, and zero-friction navigation.
+2. **True Public Good & Open Source**: 100% open-source under the permissive MIT license, without extractive platform fees or mandatory asset lockups.
+3. **Real-World Asset (RWA) Utility on Stellar**: Each validated agricultural lot is anchored on-chain with immutable cryptographic hashes on Stellar Horizon Testnet and Soroban, proving regional origin and chemical/physical compliance.
+4. **Local University Talent Empowerment**: Conceived, engineered, and maintained by undergraduate software and civil engineering students at **TecNM Campus Tlaxiaco**, generating sustainable regional technological sovereignty in one of Mexico's most historically underserved areas.
 
 ---
 
-## 🏗️ Arquitectura Técnica
+## 🎯 Social Impact & Problem Statement
 
-El sistema está construido como una aplicación full-stack modular y reactiva:
+### The Problem
+In the Mixteca Alta region, over 80% of agricultural producers and artisans are elderly smallholders who suffer from:
+- **Predatory Intermediaries (*Coyotes*):** Purchasing high-grade coffee beans and artisanal pulque at up to 75% below legitimate market prices due to lack of certification.
+- **Digital Literacy Barrier:** Standard web3 and fintech apps impose complex wallet interactions, English terminology, and inaccessible UX patterns.
+- **Costly Certification Laboratories:** Traditional food laboratories charge prohibitive fees and require weeks of physical transit to deliver basic quality reports.
+
+### The Raíz Solution
+- **Instant AI Vision Evaluation in the Field**: A single smartphone photo of coffee parchment grains, pulque vats (*tinacales*), honey density, or textile weaves is processed by multimodal vision models to verify moisture percentages, pest damage (coffee borer beetle / *broca*), and pure authenticity in seconds.
+- **Stellar Digital Origin Passport**: Every approved lot receives an immutable cryptographic seal and QR passport anchored on Stellar that end-consumers can audit worldwide.
+- **Fair Direct Settlement**: Buyers purchase directly from producers with transparent settlement and near-zero transaction costs ($0.00001 USD per transaction).
+
+---
+
+## 🏗️ System Architecture
+
+Raíz is engineered as a responsive, modular full-stack decentralized web app (PWA ready):
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                          CLIENTE WEB / PWA                              │
+│                           CLIENT / PWA (Web)                            │
 │  React 19 + TypeScript + Tailwind CSS + Lucide Icons + Motion Engine   │
-│  - Interfaz accesible para adultos mayores (Alto contraste, modo fácil)│
-│  - Grabación y reproducción de notas de voz comunitaria                 │
-│  - Síntesis de voz (Web Speech API TTS a 0.92x para dicción clara)     │
-│  - Cámara web y móvil nativa para captura de muestras                  │
+│  - Accessible elder mode (High-contrast UI, enlarged touch targets)    │
+│  - Web Speech API TTS synthesis (Calibrated 0.92x cadence)             │
+│  - Community audio note recorder with live waveform visualization      │
+│  - Direct camera capture for automated lot sample inspection            │
 └────────────────────────────────────┬────────────────────────────────────┘
-                                     │ API REST / JSON
+                                     │ REST / JSON APIs
 ┌────────────────────────────────────▼────────────────────────────────────┐
-│                       SERVIDOR / BACKEND (Node.js)                      │
+│                    NODE.JS / EXPRESS BACKEND SERVICE                    │
 │  Express + tsx + esbuild                                                │
-│  - Endpoint /api/analyze-image (Proxy seguro a Gemini 2.5 Vision)      │
-│  - Motor de validación según normas mexicanas (NMX-F-083, etc.)         │
-│  - Orquestador de transacciones para la red Stellar                     │
+│  - Secure proxy endpoint /api/analyze-image to Gemini 2.5 Vision API    │
+│  - Mexican Agronomic Norms Validation Engine (NMX-F-083, NOM specs)     │
+│  - Stellar Horizon transaction & Soroban contract dispatcher            │
 └──────────────────┬──────────────────────────────────┬───────────────────┘
                    │                                  │
 ┌──────────────────▼──────────────────┐   ┌───────────▼───────────────────┐
-│     INTELIGENCIA ARTIFICIAL         │   │         RED STELLAR           │
+│     MULTIMODAL AI SERVICE           │   │        STELLAR NETWORK        │
 │  Google Gemini 2.5 Flash            │   │  Stellar Horizon Testnet      │
-│  - Clasificación de producto        │   │  + Soroban Smart Contracts    │
-│  - Estimación de humedad y broca    │   │  - Sellado inmutable de hash  │
-│  - Detección de adulterantes        │   │  - Pasaporte Digital de Origen│
-│  - Prevención de falsos positivos   │   │  - Folios públicos auditables │
+│  - Category & specimen detection    │   │  + Soroban Smart Contracts    │
+│  - Moisture, pest & defect scoring  │   │  - Immutable lot hash sealing │
+│  - Adulterant & purity detection    │   │  - Public audit explorer link │
+│  - Mismatch safety guardrails       │   │  - Digital Origin Passport    │
 └─────────────────────────────────────┘   └───────────────────────────────┘
 ```
 
 ---
 
-## 🌌 Integración con Stellar & Soroban
+## 🌌 Stellar & Soroban Integration
 
-Raíz aprovecha la infraestructura de **Stellar Network** para garantizar transparencia radical, costos de transacción de fracciones de centavo ($0.00001 USD) y liquidación casi instantánea (3-5 segundos):
+Raíz utilizes **Stellar Network** for its high throughput, predictable 3–5 second finality, minimal carbon footprint, and fractional fee structure:
 
-### 1. Sellado de Pasaporte de Origen (Horizon / Soroban)
-Cuando un productor registra un lote validado por IA, se genera un objeto canónico de metadatos:
+### 1. Digital Origin Passport Sealing (Horizon & Soroban)
+When a producer submits an AI-verified lot, a canonical metadata payload is generated:
+
 ```json
 {
   "producer": "Don Pedro Hernández Bautista",
-  "community": "San Cristóbal Amoltepec, Mixteca Alta",
-  "product": "Pulque Tradicional de Maguey Manso",
-  "volume": "120 Litros",
+  "community": "San Cristóbal Amoltepec, Mixteca Alta, Oaxaca",
+  "product": "Traditional Pulque (Agave Salmiana / Manso)",
+  "volume": "120 Liters",
   "qualityScore": 96,
   "timestamp": 1726315200,
-  "inspectionHash": "sha256:4a8c9b2f1e0d3..."
+  "inspectionHash": "sha256:4a8c9b2f1e0d3c5a7821..."
 }
 ```
-Este hash se ancla de forma permanente en la red Stellar mediante:
-- **`memo_hash` / `manage_data`** en transacciones estándar de Stellar Horizon.
-- **Soroban Smart Contract (`LotRegistry.rs`)**: Almacena el estado, la certificación comunitaria y el historial de transferencias del lote.
 
-### 2. Pasarela de Pagos de Comercio Justo (Fase 2)
-Integración con **Stellar Anchors** (SEP-24 / SEP-38) para permitir que compradores en el extranjero depositen stablecoins (USDC) y el productor reciba pesos mexicanos (MXN) en cooperativas de ahorro locales (Cajas Populares) sin comisiones bancarias predatorias.
+This record is permanently anchored via:
+- **`manage_data` / `memo_hash`**: On Stellar Horizon transactions for lightweight, costless verification.
+- **Soroban Smart Contract (`LotRegistry.rs`)**: Maintains state machines for certification status, community co-op endorsement, and transfer of custody history.
 
----
-
-## 💧 Participación en Drips Network (Public Goods Funding)
-
-**Raíz Comunitaria Mixteca** califica para el ecosistema de financiamiento continuo de **Drips**:
-
-- **Modelo de Splits Abiertos**: Las donaciones y *streams* de Drips recibidos se distribuyen transparentemente entre:
-  - **70%**: Fondo de becas y equipamiento para el equipo de estudiantes desarrolladores del TecNM Campus Tlaxiaco.
-  - **20%**: Fondo de hardware comunitario (dispositivos móviles y básculas digitales para tinacales y parcelas piloto).
-  - **10%**: Fondo de transacciones y despliegue de contratos en Stellar Mainnet.
-- **Reputación Open Source**: Todo el desarrollo es público, verificable y auditable en GitHub.
+### 2. Fair Trade Settlement Rails (Phase 2 Roadmap)
+Integration with **Stellar Anchors (SEP-24 / SEP-38)** to allow global buyers to deposit stablecoins (USDC) while facilitating automated off-ramping to Mexican Pesos (MXN) directly into local credit unions and savings cooperatives (*Cajas Populares*) without predatory foreign exchange fees.
 
 ---
 
-## 🚀 Ruta de Desarrollo & Hitos (Roadmap Drips / Stellar SCF)
+## 💧 Drips Protocol Integration (Continuous Public Goods Funding)
 
-### 📍 Hito 1: MVP Funcional y Validación Local *(Completado)*
-- [x] Interfaz web accesible estilo mensajería comunitaria para personas mayores.
-- [x] Motor multimodal de IA para café, pulque, miel, maíz y artesanías textiles.
-- [x] Soporte de voz completo (Lectura TTS pausada y notas de voz comunitarias).
-- [x] Simulación de sellado inmutable en Stellar Horizon Testnet.
-- [x] Código abierto bajo licencia MIT.
+**Raíz** is structured to leverage **Drips Protocol** streaming mechanics for long-term open-source sustainability:
 
-### 📍 Hito 2: Despliegue de Soroban & Drips Streams *(En Curso - Meta: Drips & SCF Kickoff)*
-- [ ] Implementación de contrato inteligente en Rust (`Soroban LotRegistry v1.0`).
-- [ ] Creación del visualizador público en tiempo real para verificar folios en el explorador Stellar (Stellar Expert).
-- [ ] Piloto en campo con 15 productores de la Unión Comunal de Tlaxiaco.
-- [ ] Integración del split de Drips para el equipo de estudiantes universitarios.
-
-### 📍 Hito 3: Integración de Pagos y Certificados Físicos NFC/QR *(Meta: SCF Build)*
-- [ ] Generación automática de etiquetas QR y etiquetas NFC imprimibles para bultos y botellas.
-- [ ] Pasarela de micropagos en Stellar (XLM / USDC) conectada a billeteras comunitarias no custodiales.
-- [ ] Soporte de audio en lengua indígena Mixteca (Tu'un Savi) grabado con hablantes nativos.
-
-### 📍 Hito 4: Expansión Regional *(Escalamiento)*
-- [ ] Adopción en 5 cooperativas de Oaxaca y Puebla.
-- [ ] Registro de Denominación de Origen Comunitaria en blockchain.
+- **Transparent Splits Model**: All incoming Drips streams and donations are programmatically routed:
+  - **70%**: Undergraduate scholarship stipends and development hardware for student engineers at TecNM Campus Tlaxiaco.
+  - **20%**: Field research hardware (smartphones, IoT digital scales, refractometers for rural pilot cooperatives).
+  - **10%**: Stellar Mainnet deployment reserve and transaction fee pool.
+- **Dependency & Open Contribution**: All contract code, documentation, and client modules remain fully public and forkable on GitHub.
 
 ---
 
-## 💻 Instalación y Despliegue
+## 🚀 Development Roadmap & Milestones (SCF & Drips)
 
-### Requisitos Previos
-- Node.js 20.x o superior
-- npm 10.x o superior
-- Llave de API de Google Gemini (`GEMINI_API_KEY`) para el motor de visión por computadora
+### 📍 Milestone 1: Production-Ready MVP & Field Prototype *(Completed)*
+- [x] High-contrast, elder-accessible messaging UI with single-touch interaction.
+- [x] Dynamic profile engine supporting Coffee, Pulque, Honey, Corn, and Textiles.
+- [x] Multimodal AI vision analysis with automated mismatch detection.
+- [x] Voice synthesis (TTS) and voice note playback for indigenous elders.
+- [x] Simulated Stellar Horizon Testnet audit sealing workflow.
+- [x] Open-source codebase under MIT License.
 
-### Pasos de Instalación
+### 📍 Milestone 2: Soroban Contracts & Drips Setup *(Current – Drips & SCF Kickoff Target)*
+- [ ] Deploy native Soroban smart contract (`LotRegistry.rs`) to Stellar Testnet.
+- [ ] Public audit explorer viewer linking transaction hashes to StellarExpert.
+- [ ] On-field pilot trial with 15 cooperative producers in Tlaxiaco and San Cristóbal Amoltepec.
+- [ ] Setup and verification of Drips stream split for the student engineering guild.
 
-1. **Clonar el repositorio:**
+### 📍 Milestone 3: Real Settlement & Physical Cryptographic Tags *(SCF Build Phase Target)*
+- [ ] Automated generation of printable QR and tamper-proof NFC tags for sacks and bottles.
+- [ ] Non-custodial Stellar wallet onboarding for cooperative treasurers.
+- [ ] Audio prompt localization in indigenous Tu'un Savi (Mixteco language) recorded by native speakers.
+- [ ] Anchor on/off-ramp testing (USDC to MXN).
+
+### 📍 Milestone 4: Regional Cooperative Scale *(Scaling Phase)*
+- [ ] Onboarding of 5 agricultural & artisan cooperatives across Oaxaca and Puebla.
+- [ ] Formal community Appellation of Origin (*Denominación de Origen*) on Stellar.
+
+---
+
+## 💻 Installation & Local Development
+
+### Prerequisites
+- Node.js 20.x or higher
+- npm 10.x or higher
+- Google Gemini API Key (`GEMINI_API_KEY`) from [Google AI Studio](https://aistudio.google.com/)
+
+### Step-by-Step Setup
+
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Open-Hub-Tec/Raiz.git
-   cd Raiz
+   git clone https://github.com/Open-Hub-Tec/raiz.git
+   cd raiz
    ```
 
-2. **Instalar dependencias:**
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Configurar variables de entorno:**
-   Crea un archivo `.env` basado en `.env.example`:
+3. **Configure environment variables:**
    ```bash
    cp .env.example .env
    ```
-   Agrega tu clave de Gemini:
+   Add your Gemini API key in `.env`:
    ```env
-   GEMINI_API_KEY=tu_clave_de_gemini_aqui
+   GEMINI_API_KEY="your_api_key_here"
    ```
 
-4. **Ejecutar en entorno de desarrollo:**
+4. **Run the local development server:**
    ```bash
    npm run dev
    ```
-   La aplicación se abrirá en `http://localhost:3000`.
+   Open `http://localhost:3000` in your web browser.
 
-5. **Compilar para producción:**
+5. **Build for production:**
    ```bash
    npm run build
    npm start
@@ -193,21 +196,21 @@ Integración con **Stellar Anchors** (SEP-24 / SEP-38) para permitir que comprad
 
 ---
 
-## 👥 Equipo y Gobernanza
+## 👥 Team & Governance
 
-Este proyecto es una iniciativa de desarrollo tecnológico social impulsada por el **Instituto Tecnológico de Tlaxiaco (TecNM Campus Tlaxiaco)**:
+This project is an open-source social technology initiative spearheaded by the **Instituto Tecnológico de Tlaxiaco (TecNM Campus Tlaxiaco)**:
 
-- **Institución:** Instituto Tecnológico de Tlaxiaco, Oaxaca, México.
-- **Línea de Investigación:** Redes Descentralizadas, Inteligencia Artificial Aplicada a la Agricultura y Soberanía Tecnológica Indígena.
-- **Contacto Oficial:** `tecnologicotlaxiaco@gmail.com`
-- **Comunidades Aliadas:** Tlaxiaco, San Cristóbal Amoltepec, Santa María Cuquila y San Juan Mixtepec.
+- **Academic Institution:** Instituto Tecnológico de Tlaxiaco, Oaxaca, Mexico.
+- **Research Focus:** Decentralized Networks, Applied Agricultural AI, Indigenous Digital Sovereignty.
+- **Official Contact:** `tecnologicotlaxiaco@gmail.com`
+- **Partner Indigenous Communities:** Heroica Ciudad de Tlaxiaco, San Cristóbal Amoltepec, Santa María Cuquila, San Juan Mixtepec.
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está bajo la Licencia **MIT** - consulta el archivo [LICENSE](LICENSE) para más detalles. Se permite y fomenta su uso, modificación, réplica y distribución con fines educativos, sociales y comerciales justos.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details. Open distribution, academic replication, and fair-trade commercial usage are encouraged.
 
 <div align="center">
-  <sub>Construido con orgullo comunitario en la Heroica Ciudad de Tlaxiaco, Oaxaca 🇲🇽</sub>
+  <sub>Proudly developed in the Heroica Ciudad de Tlaxiaco, Oaxaca, Mexico 🇲🇽</sub>
 </div>
