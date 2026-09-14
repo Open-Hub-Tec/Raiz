@@ -50,10 +50,11 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
 
     if (!clean) return null;
 
-    // Check Option 4 FIRST (Ayuda técnica / chat / soporte)
+    // Check Option 4 FIRST (Ayuda técnica / chat / soporte / Mixteco)
     if (
       /\b(4|cuatro|cuarta)\b/i.test(clean) ||
       /(opcion|numero|num|no\.?)\s*(4|cuatro)/i.test(clean) ||
+      clean.includes('kumi') || // Mixteco for four
       clean.includes('ayuda') ||
       clean.includes('tecnica') ||
       clean.includes('soporte') ||
@@ -65,10 +66,11 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
       return 4;
     }
 
-    // Check Option 3 (Ver mis pagos / saldo / billetera)
+    // Check Option 3 (Ver mis pagos / saldo / billetera / Mixteco)
     if (
       /\b(3|tres|tercera)\b/i.test(clean) ||
       /(opcion|numero|num|no\.?)\s*(3|tres)/i.test(clean) ||
+      clean.includes('uni') || // Mixteco for three
       clean.includes('pago') ||
       clean.includes('pagos') ||
       clean.includes('saldo') ||
@@ -80,10 +82,12 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
       return 3;
     }
 
-    // Check Option 2 (Ver mis lotes / inventario)
+    // Check Option 2 (Ver mis lotes / inventario / Mixteco)
     if (
       /\b(2|dos|segunda)\b/i.test(clean) ||
       /(opcion|numero|num|no\.?)\s*(2|dos)/i.test(clean) ||
+      clean.includes('uu') || // Mixteco for two
+      clean.includes('uvi') ||
       clean.includes('lote') ||
       clean.includes('lotes') ||
       clean.includes('cosechas') ||
@@ -94,10 +98,11 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
       return 2;
     }
 
-    // Check Option 1 (Registrar cosecha o artesanía)
+    // Check Option 1 (Registrar cosecha o artesanía / Mixteco)
     if (
       /\b(1|uno|una|primero|primera)\b/i.test(clean) ||
       /(opcion|numero|num|no\.?)\s*(1|uno|una)/i.test(clean) ||
+      clean.includes('iin') || // Mixteco for one
       clean.includes('registrar') ||
       clean.includes('registro') ||
       clean.includes('nueva cosecha') ||

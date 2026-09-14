@@ -1460,11 +1460,11 @@ export const RegisterCoffeeLotScreen: React.FC<RegisterCoffeeLotScreenProps> = (
               </div>
 
               <div className="flex items-center gap-2 text-[13px]">
-                <span className={`material-symbols-outlined text-[18px] ${validationStep >= 3 ? 'text-amber-500' : 'text-gray-300'}`}>
-                  {validationStep >= 3 ? 'lock' : 'radio_button_unchecked'}
+                <span className={`material-symbols-outlined text-[18px] ${validationStep >= 3 ? 'text-emerald-600' : 'text-gray-300'}`}>
+                  {validationStep >= 3 ? 'verified_user' : 'radio_button_unchecked'}
                 </span>
-                <span className={validationStep >= 3 ? 'text-[#a73918] font-bold' : 'text-gray-400'}>
-                  3. Sellado inmutable en Stellar Horizon Testnet
+                <span className={validationStep >= 3 ? 'text-[#032517] font-bold' : 'text-gray-400'}>
+                  3. Sellado inalterable de autenticidad comunal (Red Stellar)
                 </span>
               </div>
             </div>

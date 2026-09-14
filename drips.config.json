@@ -1,0 +1,73 @@
+{
+  "name": "Raiz - Open Hub TecNM Tlaxiaco",
+  "description": "Configuración de Splits en Drips Network para el financiamiento público transparente y por mérito de 60 estudiantes del TecNM Campus Tlaxiaco",
+  "version": "1.0.0",
+  "project": {
+    "repository": "https://github.com/Open-Hub-Tec/raiz",
+    "program": "Stellar Wave Program",
+    "funder": "Drips Network",
+    "academicInstitution": "Tecnológico Nacional de México - Campus Tlaxiaco",
+    "major": "Ingeniería en Sistemas Computacionales",
+    "totalStudents": 60
+  },
+  "splitsRules": {
+    "description": "Distribución 55% Estudiantes (Proof of Work) / 20% Mantenedor Principal (Arquitectura y Mentoría) / 15% Operación de Campo / 10% Infraestructura",
+    "totalPercentage": 100,
+    "unallocatedFundsPolicy": "Los fondos correspondientes a estudiantes sin contribución verificada (sin commits ni issues resueltos) NO se pierden ni se retienen en una wallet privada: se acumulan automáticamente en el Fondo Común de Reserva Estudiantil para becas de titulación y hardware de laboratorio.",
+    "splits": [
+      {
+        "category": "Estudiantes Investigadores (Proof of Work)",
+        "percentage": 55,
+        "recipientType": "drips_multisig_or_stream",
+        "description": "55% del fondo total dividido equitativamente entre los estudiantes con aportes comprobables en GitHub (código, pruebas de usabilidad, levantamiento de campo).",
+        "distributionMethod": "Merit-based GitHub PR/Issue milestone validation (Semanal/Quincenal)",
+        "inactivityRule": "Si un estudiante no registra actividad, su cuota permanece en el smart contract de Drips bajo el pool estudiantil y se reasigna a los estudiantes más activos o al fondo de titulación."
+      },
+      {
+        "category": "Mantenedor Principal y Dirección Técnica (Lead Maintainer)",
+        "percentage": 20,
+        "recipientType": "maintainer_wallet",
+        "description": "20% asignado al Mantenedor Principal del repositorio (docente/arquitecto de software) por la dirección de arquitectura, revisión de código (Code Review), fusión de Pull Requests (Merge), diseño de sprints en Wave, gobernanza de seguridad y tutoría técnica de los 60 estudiantes.",
+        "responsibilities": [
+          "Arquitectura del sistema y contratos inteligentes Soroban",
+          "Revisión y aprobación de Pull Requests de los estudiantes",
+          "Delimitación de Issues para los ciclos de sprint de Drips Wave",
+          "Coordinación académica con TecNM y enlace institucional con Drips/Stellar"
+        ]
+      },
+      {
+        "category": "Operación de Campo y Viáticos en Comunidades",
+        "percentage": 15,
+        "recipientType": "multisig_committee",
+        "description": "15% destinado a transporte, traslados a comunidades de la Mixteca Alta (Yucuhiti, Atatlahuca, Peñasco), materiales didácticos impresos y refrigerios para los 50 artesanos en talleres comunitarios.",
+        "accountability": "Comprobación mediante bitácoras de campo y firmas de comités comunitarios"
+      },
+      {
+        "category": "Infraestructura, Conectividad y Licencias",
+        "percentage": 10,
+        "recipientType": "tech_infrastructure_pool",
+        "description": "10% para servidores, dominios, infraestructura offline (routers portátiles de malla, tarjetas SIM de prueba en campo) y mantenimiento del laboratorio de sistemas.",
+        "accountability": "Reporte público en el repositorio Open-Hub-Tec/raiz"
+      }
+    ]
+  },
+  "githubValidationCriteria": {
+    "requiredRoles": [
+      "Frontend & Mobile Accessibility Engineers (Elder UX)",
+      "Audio & Voice Recognition Engineers (Mixteco / Whisper)",
+      "Smart Contract & Stellar Horizon Integrators",
+      "Field Usability Researchers (50 Indigenous Artisans Cohort)",
+      "Documentation & Open Source Community Managers"
+    ],
+    "milestoneIssues": [
+      {
+        "issueNumber": 1,
+        "title": "Field Pain-Point & Economic Exploitation Validation with 50 Indigenous Artisans & Farmers"
+      },
+      {
+        "issueNumber": 2,
+        "title": "Elder-Accessible Interactive Prototype Usability Testing with 50 Indigenous Artisans in the Field"
+      }
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 export type NavigationTab = 'chat' | 'menu' | 'productos';
 
+export type AppLanguage = 'es' | 'mix';
+
 export type ScreenView =
   | 'menu_principal'
   | 'registro_productor'

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DigitalPassportLot, NavigationTab, ProductItem, ScreenView } from './types';
+import { AppLanguage, DigitalPassportLot, NavigationTab, ProductItem, ScreenView } from './types';
 import { sanitizeProductName } from './utils/productUtils';
 import { INITIAL_PRODUCTS, INITIAL_VERIFIED_LOTS } from './data/mockData';
 import { TopAppBar } from './components/TopAppBar';
@@ -20,6 +20,8 @@ import { MicrophoneDiagnosticModal } from './components/MicrophoneDiagnosticModa
 export default function App() {
   const [currentTab, setCurrentTab] = useState<NavigationTab>('menu');
   const [currentScreen, setCurrentScreen] = useState<ScreenView>('menu_principal');
+  const [appLanguage, setAppLanguage] = useState<AppLanguage>('es');
+  const [elderMode, setElderMode] = useState<boolean>(false);
 
   // Active data
   const [lots, setLots] = useState<DigitalPassportLot[]>(INITIAL_VERIFIED_LOTS);
@@ -281,7 +283,11 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, i) => acc + i.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-[#fcf9f3] text-[#1c1c18] flex flex-col justify-between selection:bg-[#ffdbd1] selection:text-[#3b0900]">
+    <div
+      className={`min-h-screen bg-[#fcf9f3] text-[#1c1c18] flex flex-col justify-between selection:bg-[#ffdbd1] selection:text-[#3b0900] ${
+        elderMode ? 'text-[17px]' : ''
+      }`}
+    >
       {/* Top Application Bar */}
       <TopAppBar
         currentTab={currentTab}
@@ -290,6 +296,10 @@ export default function App() {
         onOpenCart={() => setIsCartModalOpen(true)}
         onOpenMicDiagnostic={() => setIsMicDiagnosticModalOpen(true)}
         cartCount={totalCartCount}
+        appLanguage={appLanguage}
+        onToggleLanguage={() => setAppLanguage((prev) => (prev === 'es' ? 'mix' : 'es'))}
+        elderMode={elderMode}
+        onToggleElderMode={() => setElderMode((prev) => !prev)}
       />
 
       {/* Screen Routing */}
