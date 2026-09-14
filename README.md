@@ -10,7 +10,7 @@
 [![Status: MVP Pilot Active v1.0](https://img.shields.io/badge/Status-Active%20Pilot%20v1.0-success.svg)]()
 
 <p align="center">
-  <b>Developed by a student research & engineering team at Instituto Tecnológico de Tlaxiaco (Oaxaca, Mexico)</b>
+  <b>Conceived and developed by undergraduate engineering students from native indigenous communities at Instituto Tecnológico de Tlaxiaco (Oaxaca, Mexico)</b>
   <br>
   <i>Candidate for continuous public goods funding on <b>Drips Protocol</b> and milestone grants in the <b>Stellar Community Fund (SCF)</b></i>
 </p>
@@ -32,7 +32,7 @@ By combining **Multimodal Computer Vision AI (Gemini 2.5)** for instant on-field
 1. **Radical Technological & Financial Inclusion**: Built specifically for elder adults (60+ years old) and speakers of indigenous languages (Tu'un Savi / Mixteco), featuring conversational voice-assisted guidance (Text-to-Speech), hands-free audio notes, and zero-friction navigation.
 2. **True Public Good & Open Source**: 100% open-source under the permissive MIT license, without extractive platform fees or mandatory asset lockups.
 3. **Real-World Asset (RWA) Utility on Stellar**: Each validated agricultural lot is anchored on-chain with immutable cryptographic hashes on Stellar Horizon Testnet and Soroban, proving regional origin and chemical/physical compliance.
-4. **Local University Talent Empowerment**: Conceived, engineered, and maintained by undergraduate software and civil engineering students at **TecNM Campus Tlaxiaco**, generating sustainable regional technological sovereignty in one of Mexico's most historically underserved areas.
+4. **Indigenous Youth & University Talent Empowerment**: Conceived, engineered, and maintained by undergraduate computer systems and civil engineering students at **TecNM Campus Tlaxiaco** who themselves are native members of the indigenous communities of the Mixteca Highlands (*Ñuu Savi*). They possess direct cultural context, native language fluency (Tu'un Savi / Mixteco), and lived understanding of their families' agricultural realities, generating true regional technological sovereignty.
 
 ---
 
@@ -198,12 +198,13 @@ Integration with **Stellar Anchors (SEP-24 / SEP-38)** to allow global buyers to
 
 ## 👥 Team & Governance
 
-This project is an open-source social technology initiative spearheaded by the **Instituto Tecnológico de Tlaxiaco (TecNM Campus Tlaxiaco)**:
+This project is an open-source social technology initiative spearheaded by **undergraduate engineering students and faculty researchers at the Instituto Tecnológico de Tlaxiaco (TecNM Campus Tlaxiaco)** in the state of Oaxaca, Mexico:
 
-- **Academic Institution:** Instituto Tecnológico de Tlaxiaco, Oaxaca, Mexico.
-- **Research Focus:** Decentralized Networks, Applied Agricultural AI, Indigenous Digital Sovereignty.
+- **Student Developer Guild:** The core development team is formed by indigenous undergraduate students who grew up in the rural and farming towns of the Mixteca Alta. As native speakers and children/grandchildren of local farmers and artisans, they bridge cutting-edge blockchain/AI engineering directly with indigenous community values (*Tequio* - collective voluntary community work).
+- **Academic Institution:** Instituto Tecnológico de Tlaxiaco (TecNM), Oaxaca, Mexico.
+- **Research & Innovation Focus:** Decentralized Networks (Stellar/Soroban), Applied Agricultural AI (Gemini Multimodal Vision), Indigenous Digital Sovereignty & Financial Inclusion.
 - **Official Contact:** `tecnologicotlaxiaco@gmail.com`
-- **Partner Indigenous Communities:** Heroica Ciudad de Tlaxiaco, San Cristóbal Amoltepec, Santa María Cuquila, San Juan Mixtepec.
+- **Participating Indigenous Municipalities & Communities:** Heroica Ciudad de Tlaxiaco, San Cristóbal Amoltepec, Santa María Cuquila, San Juan Mixtepec, San Esteban Atatlahuca, and Santo Tomás Ocotepec.
 
 ---
 
