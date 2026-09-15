@@ -326,6 +326,8 @@ export default function App() {
             setSelectedProductType(sanitizeProductName(name));
           }}
           onNavigateScreen={handleNavigateScreen}
+          elderMode={elderMode}
+          appLanguage={appLanguage}
         />
       )}
 
@@ -334,6 +336,8 @@ export default function App() {
           selectedProductType={selectedProductType}
           onNavigateScreen={handleNavigateScreen}
           onLotCreated={handleLotCreated}
+          elderMode={elderMode}
+          appLanguage={appLanguage}
         />
       )}
 
@@ -344,6 +348,8 @@ export default function App() {
           onOpenDictamen={() => setIsDictamenModalOpen(true)}
           onDirectMessageProducer={handleDirectContact}
           onAddToCart={handleAddToCart}
+          elderMode={elderMode}
+          appLanguage={appLanguage}
         />
       )}
 

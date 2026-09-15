@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ScreenView } from '../types';
+import { AppLanguage, ScreenView } from '../types';
 import { startAudioRecording, LiveRecorderSession } from '../utils/audioRecorder';
 import { getProductProfile, ProductProfile, sanitizeProductName } from '../utils/productUtils';
 
@@ -7,13 +7,18 @@ interface RegisterCoffeeLotScreenProps {
   selectedProductType?: string;
   onNavigateScreen: (screen: ScreenView) => void;
   onLotCreated?: (customLot?: any) => void;
+  elderMode?: boolean;
+  appLanguage?: AppLanguage;
 }
 
 export const RegisterCoffeeLotScreen: React.FC<RegisterCoffeeLotScreenProps> = ({
   selectedProductType = 'Café',
   onNavigateScreen,
-  onLotCreated
+  onLotCreated,
+  elderMode = true,
+  appLanguage = 'es'
 }) => {
+  const isMixteco = appLanguage === 'mix';
   const cleanProductName = sanitizeProductName(selectedProductType || 'Café');
   const profile: ProductProfile = getProductProfile(cleanProductName);
 
@@ -81,7 +86,12 @@ export const RegisterCoffeeLotScreen: React.FC<RegisterCoffeeLotScreenProps> = (
     analysis: string;
   } | null>(null);
 
-  const [easyMode, setEasyMode] = useState<boolean>(true);
+  const [easyMode, setEasyMode] = useState<boolean>(elderMode);
+
+  useEffect(() => {
+    setEasyMode(elderMode);
+  }, [elderMode]);
+
   const [isSpeakingDiagnosis, setIsSpeakingDiagnosis] = useState<boolean>(false);
 
   const handleSpeakDiagnosis = (customText?: string) => {

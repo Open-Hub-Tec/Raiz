@@ -118,7 +118,17 @@ Raíz breaks this cycle through automated **Perpetual Secondary Royalties** buil
 - **Anti-Plagiarism & Cultural Attribution:** High-resolution digital weave fingerprints and botanical spectrometry profiles prevent commercial appropriation, ensuring perpetual royalties remain legally anchored to the authentic artisan's lineage.
 - **Cash-Friendly Off-ramping:** Royalties accumulated on Stellar are batch-liquidated through local community partners (Banco del Bienestar / Finabien) so non-technical elders receive cash alerts without touching complex DEX interfaces.
 
-### 3. Fair Trade Settlement Rails (Phase 2 Roadmap)
+### 3. Market Dynamics: Producer Direct Sales vs. Downstream Specialty Resellers
+
+A common question in decentralized agricultural marketplaces is: **How does a downstream buyer/reseller compete if the producer also lists lots directly in the showcase?**
+
+Raíz resolves this through positive-sum economic design and product transformation:
+- **Raw Commodity vs. Transformed Value:** The smallholder provides bulk dried pergamino or raw loom fabrics. The specialty reseller adds roasting curves, cupping curation, hermetic nitrogen packaging, urban retail placement, and barista service.
+- **Logistics & Immediacy:** Urban consumers pay for same-day delivery and in-store cups in metropolitan centers, while farmgate direct shipments take 4–7 days from the mountains.
+- **Positive-Sum Alignment:** The **8% Perpetual Royalty** on Soroban guarantees that whenever the reseller successfully markets lots at premium urban margins, the farming family receives recurring cash streams automatically.
+- 📖 **Complete In-Depth Analysis:** Read our dedicated paper: [**Market Dynamics & Incentive Design (`docs/MARKET_DYNAMICS_AND_INCENTIVES.md`)**](./docs/MARKET_DYNAMICS_AND_INCENTIVES.md).
+
+### 4. Fair Trade Settlement Rails (Phase 2 Roadmap)
 Integration with **Stellar Anchors (SEP-24 / SEP-38)** to allow global buyers to deposit stablecoins (USDC) while facilitating automated off-ramping to Mexican Pesos (MXN) directly into local credit unions and savings cooperatives (*Cajas Populares*) without predatory foreign exchange fees.
 
 ---

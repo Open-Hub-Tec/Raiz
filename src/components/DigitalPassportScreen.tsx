@@ -1,5 +1,5 @@
 import React from 'react';
-import { DigitalPassportLot, ScreenView } from '../types';
+import { AppLanguage, DigitalPassportLot, ScreenView } from '../types';
 
 interface DigitalPassportScreenProps {
   lot: DigitalPassportLot;
@@ -16,6 +16,8 @@ interface DigitalPassportScreenProps {
     quantity: number;
     unit: string;
   }) => void;
+  elderMode?: boolean;
+  appLanguage?: AppLanguage;
 }
 
 export const DigitalPassportScreen: React.FC<DigitalPassportScreenProps> = ({
@@ -23,8 +25,11 @@ export const DigitalPassportScreen: React.FC<DigitalPassportScreenProps> = ({
   onNavigateScreen,
   onOpenDictamen,
   onDirectMessageProducer,
-  onAddToCart
+  onAddToCart,
+  elderMode = false,
+  appLanguage = 'es'
 }) => {
+  const isMixteco = appLanguage === 'mix';
   const handleBuyLot = () => {
     onAddToCart({
       id: lot.id,
@@ -45,10 +50,12 @@ export const DigitalPassportScreen: React.FC<DigitalPassportScreenProps> = ({
         <button
           type="button"
           onClick={() => onNavigateScreen('menu_principal')}
-          className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#032517] hover:text-[#a73918] bg-white px-3 py-1.5 rounded-full border border-[#c1c8c2]/50 shadow-2xs transition-all active:scale-95 cursor-pointer"
+          className={`inline-flex items-center gap-1.5 font-bold text-[#032517] hover:text-[#a73918] bg-white rounded-full border border-[#c1c8c2]/50 shadow-2xs transition-all active:scale-95 cursor-pointer ${
+            elderMode ? 'px-4 py-2 text-[15px] min-h-[46px]' : 'px-3 py-1.5 text-[13px]'
+          }`}
         >
           <span className="material-symbols-outlined text-[18px]">arrow_back</span>
-          <span>Volver al Menú</span>
+          <span>{isMixteco ? "Nda'a Menú" : 'Volver al Menú'}</span>
         </button>
 
         <div className="flex items-center gap-1.5">
@@ -57,7 +64,7 @@ export const DigitalPassportScreen: React.FC<DigitalPassportScreenProps> = ({
             <span>Stellar Testnet (Simulado)</span>
           </span>
           <span className="text-[12px] font-semibold text-[#a73918] bg-[#ffdbd1] px-3 py-1 rounded-full">
-            Paso 4 de 4 · Pasaporte Emitido
+            {isMixteco ? 'Paso 4 · Pasaporte' : 'Paso 4 de 4 · Pasaporte Emitido'}
           </span>
         </div>
       </div>
