@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ScreenView } from '../types';
+import { AppLanguage, ScreenView } from '../types';
 import { startAudioRecording, LiveRecorderSession } from '../utils/audioRecorder';
 
 interface MainMenuScreenProps {
@@ -9,6 +9,8 @@ interface MainMenuScreenProps {
   onOpenTechHelp: () => void;
   onOpenMap?: () => void;
   onOpenMicDiagnostic?: () => void;
+  appLanguage?: AppLanguage;
+  elderMode?: boolean;
 }
 
 export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
@@ -17,7 +19,9 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
   onOpenPayments,
   onOpenTechHelp,
   onOpenMap,
-  onOpenMicDiagnostic
+  onOpenMicDiagnostic,
+  appLanguage = 'es',
+  elderMode = false
 }) => {
   const [numericInput, setNumericInput] = useState('');
   const [isRecording, setIsRecording] = useState<boolean>(false);
@@ -263,43 +267,55 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
 
       {/* BURBUJA DE CHAT ASISTENTE (Tipo conversación rural) */}
       <div className="flex items-start gap-3">
-        <div className="w-10 h-10 rounded-full bg-[#1b3b2b] text-white flex items-center justify-center shrink-0 shadow-sm mt-1">
-          <span className="material-symbols-outlined text-[20px]">eco</span>
+        <div className={`rounded-full bg-[#1b3b2b] text-white flex items-center justify-center shrink-0 shadow-sm mt-1 ${elderMode ? 'w-12 h-12' : 'w-10 h-10'}`}>
+          <span className={`material-symbols-outlined ${elderMode ? 'text-[26px]' : 'text-[20px]'}`}>eco</span>
         </div>
-        <div className="flex flex-col gap-1 max-w-[85%]">
-          <div className="bg-white p-4 rounded-2xl rounded-tl-xs border border-[#c1c8c2]/30 shadow-sm">
-            <p className="text-[22px] text-[#032517] font-bold mb-1 tracking-tight">
-              ¡Hola, Don Efraín!
+        <div className="flex flex-col gap-1 max-w-[88%]">
+          <div className={`bg-white p-4 rounded-2xl rounded-tl-xs border border-[#c1c8c2]/30 shadow-sm ${elderMode ? 'p-5' : 'p-4'}`}>
+            <p className={`text-[#032517] font-extrabold mb-1 tracking-tight ${elderMode ? 'text-[26px]' : 'text-[22px]'}`}>
+              {appLanguage === 'mix' ? "¡Ta'vi, Don Efraín! (¡Hola!)" : "¡Hola, Don Efraín!"}
             </p>
-            <p className="text-[16px] text-[#1c1c18] leading-relaxed">
-              ¿Qué tarea realizaremos hoy en sus parcelas o taller? Presione una opción del menú:
+            <p className={`text-[#1c1c18] leading-relaxed ${elderMode ? 'text-[19px] font-medium' : 'text-[16px]'}`}>
+              {appLanguage === 'mix'
+                ? "¿Ndá chuun kuu kuñu'un yo vixin? Toca número u hablo por voz:"
+                : "¿Qué tarea realizaremos hoy en sus parcelas o taller? Presione o diga un número:"}
             </p>
           </div>
-          <span className="text-[13px] text-[#424843] ml-2 font-bold">
-            10:42 a.m. • Modo campesino
+          <span className={`text-[#424843] ml-2 font-bold ${elderMode ? 'text-[14px]' : 'text-[13px]'}`}>
+            10:42 a.m. • {elderMode ? 'Modo Mayor (Letra Grande)' : 'Modo Campesino'}
           </span>
         </div>
       </div>
 
-      {/* MENÚ NUMERADO DE 4 ACCIONES DE ALTO IMPACTO TÁCTIL (Mínimo 48x48px por target) */}
-      <div className="flex flex-col gap-3 mt-1">
+      {/* MENÚ NUMERADO DE 4 ACCIONES DE ALTO IMPACTO TÁCTIL (Mínimo 58px-72px por target) */}
+      <div className={`flex flex-col ${elderMode ? 'gap-4 mt-2' : 'gap-3 mt-1'}`}>
         {/* OPCIÓN 1: Registrar cosecha o artesanía */}
         <button
           type="button"
           onClick={() => onNavigateScreen('catalogo_producto')}
-          className="touch-ripple w-full min-h-[58px] bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border-2 border-[#a73918]/30 hover:border-[#a73918] rounded-2xl p-3.5 flex items-center justify-between text-left shadow-xs cursor-pointer group"
+          className={`touch-ripple w-full bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border-2 border-[#a73918]/30 hover:border-[#a73918] rounded-2xl flex items-center justify-between text-left shadow-xs cursor-pointer group ${
+            elderMode ? 'min-h-[74px] p-4.5 border-3' : 'min-h-[58px] p-3.5'
+          }`}
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-full bg-[#a73918] text-white flex items-center justify-center text-[20px] font-bold shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+            <div className={`rounded-full bg-[#a73918] text-white flex items-center justify-center font-black shrink-0 shadow-xs group-hover:scale-105 transition-transform ${
+              elderMode ? 'w-14 h-14 text-[24px]' : 'w-12 h-12 text-[20px]'
+            }`}>
               1
             </div>
             <div className="flex flex-col">
-              <span className="text-[17px] text-[#032517] font-bold">Registrar cosecha o artesanía</span>
-              <span className="text-[13px] text-[#424843] font-medium">Café, miel, maíz, telar de cintura o palma</span>
+              <span className={`text-[#032517] font-bold ${elderMode ? 'text-[20px] font-extrabold' : 'text-[17px]'}`}>
+                {appLanguage === 'mix' ? "1. Tu'un Chichi (Registrar Cosecha)" : "1. Registrar cosecha o artesanía"}
+              </span>
+              <span className={`text-[#424843] ${elderMode ? 'text-[15px] font-semibold' : 'text-[13px] font-medium'}`}>
+                Café, miel, maíz, telar de cintura o palma
+              </span>
             </div>
           </div>
-          <div className="w-10 h-10 rounded-full bg-[#f6f3ed] flex items-center justify-center text-[#032517] shrink-0 group-hover:bg-[#ffdbd1] transition-colors">
-            <span className="material-symbols-outlined text-[24px]">add_a_photo</span>
+          <div className={`rounded-full bg-[#f6f3ed] flex items-center justify-center text-[#032517] shrink-0 group-hover:bg-[#ffdbd1] transition-colors ${
+            elderMode ? 'w-12 h-12' : 'w-10 h-10'
+          }`}>
+            <span className={`material-symbols-outlined ${elderMode ? 'text-[28px]' : 'text-[24px]'}`}>add_a_photo</span>
           </div>
         </button>
 
@@ -307,19 +323,29 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
         <button
           type="button"
           onClick={onOpenLots}
-          className="touch-ripple w-full min-h-[58px] bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border border-[#c1c8c2]/60 rounded-2xl p-3.5 flex items-center justify-between text-left shadow-xs cursor-pointer group"
+          className={`touch-ripple w-full bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border border-[#c1c8c2]/60 rounded-2xl flex items-center justify-between text-left shadow-xs cursor-pointer group ${
+            elderMode ? 'min-h-[74px] p-4.5 border-2 border-[#032517]/30' : 'min-h-[58px] p-3.5'
+          }`}
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-full bg-[#a73918] text-white flex items-center justify-center text-[20px] font-bold shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+            <div className={`rounded-full bg-[#a73918] text-white flex items-center justify-center font-black shrink-0 shadow-xs group-hover:scale-105 transition-transform ${
+              elderMode ? 'w-14 h-14 text-[24px]' : 'w-12 h-12 text-[20px]'
+            }`}>
               2
             </div>
             <div className="flex flex-col">
-              <span className="text-[16px] text-[#032517] font-bold">Ver mis lotes</span>
-              <span className="text-[13px] text-[#424843]">4 lotes activos en acopio</span>
+              <span className={`text-[#032517] font-bold ${elderMode ? 'text-[20px] font-extrabold' : 'text-[16px]'}`}>
+                {appLanguage === 'mix' ? "2. Koto Lotes (Ver Mis Lotes)" : "2. Ver mis lotes"}
+              </span>
+              <span className={`text-[#424843] ${elderMode ? 'text-[15px] font-semibold' : 'text-[13px]'}`}>
+                4 lotes activos en acopio
+              </span>
             </div>
           </div>
-          <div className="w-10 h-10 rounded-full bg-[#f6f3ed] flex items-center justify-center text-[#032517] shrink-0 group-hover:bg-[#ffdbd1] transition-colors">
-            <span className="material-symbols-outlined text-[24px]">inventory_2</span>
+          <div className={`rounded-full bg-[#f6f3ed] flex items-center justify-center text-[#032517] shrink-0 group-hover:bg-[#ffdbd1] transition-colors ${
+            elderMode ? 'w-12 h-12' : 'w-10 h-10'
+          }`}>
+            <span className={`material-symbols-outlined ${elderMode ? 'text-[28px]' : 'text-[24px]'}`}>inventory_2</span>
           </div>
         </button>
 
@@ -327,19 +353,29 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
         <button
           type="button"
           onClick={onOpenPayments}
-          className="touch-ripple w-full min-h-[58px] bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border border-[#c1c8c2]/60 rounded-2xl p-3.5 flex items-center justify-between text-left shadow-xs cursor-pointer group"
+          className={`touch-ripple w-full bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border border-[#c1c8c2]/60 rounded-2xl flex items-center justify-between text-left shadow-xs cursor-pointer group ${
+            elderMode ? 'min-h-[74px] p-4.5 border-2 border-[#032517]/30' : 'min-h-[58px] p-3.5'
+          }`}
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-full bg-[#a73918] text-white flex items-center justify-center text-[20px] font-bold shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+            <div className={`rounded-full bg-[#a73918] text-white flex items-center justify-center font-black shrink-0 shadow-xs group-hover:scale-105 transition-transform ${
+              elderMode ? 'w-14 h-14 text-[24px]' : 'w-12 h-12 text-[20px]'
+            }`}>
               3
             </div>
             <div className="flex flex-col">
-              <span className="text-[16px] text-[#032517] font-bold">Ver mis pagos</span>
-              <span className="text-[13px] text-[#424843]">Recibos y saldo disponible</span>
+              <span className={`text-[#032517] font-bold ${elderMode ? 'text-[20px] font-extrabold' : 'text-[16px]'}`}>
+                {appLanguage === 'mix' ? "3. Koto Xu'un (Ver Mis Pagos)" : "3. Ver mis pagos"}
+              </span>
+              <span className={`text-[#424843] ${elderMode ? 'text-[15px] font-semibold' : 'text-[13px]'}`}>
+                Recibos y saldo disponible
+              </span>
             </div>
           </div>
-          <div className="w-10 h-10 rounded-full bg-[#f6f3ed] flex items-center justify-center text-[#032517] shrink-0 group-hover:bg-[#ffdbd1] transition-colors">
-            <span className="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+          <div className={`rounded-full bg-[#f6f3ed] flex items-center justify-center text-[#032517] shrink-0 group-hover:bg-[#ffdbd1] transition-colors ${
+            elderMode ? 'w-12 h-12' : 'w-10 h-10'
+          }`}>
+            <span className={`material-symbols-outlined ${elderMode ? 'text-[28px]' : 'text-[24px]'}`}>account_balance_wallet</span>
           </div>
         </button>
 
@@ -347,20 +383,30 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
         <button
           type="button"
           onClick={onOpenTechHelp}
-          className="touch-ripple w-full min-h-[58px] bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border border-[#c1c8c2]/60 rounded-2xl p-3.5 flex items-center justify-between text-left shadow-xs cursor-pointer group"
+          className={`touch-ripple w-full bg-white hover:bg-[#f0eee8] active:scale-[0.98] transition-all duration-200 border border-[#c1c8c2]/60 rounded-2xl flex items-center justify-between text-left shadow-xs cursor-pointer group ${
+            elderMode ? 'min-h-[74px] p-4.5 border-2 border-[#032517]/30' : 'min-h-[58px] p-3.5'
+          }`}
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-full bg-[#a73918] text-white flex items-center justify-center text-[20px] font-bold shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+            <div className={`rounded-full bg-[#a73918] text-white flex items-center justify-center font-black shrink-0 shadow-xs group-hover:scale-105 transition-transform ${
+              elderMode ? 'w-14 h-14 text-[24px]' : 'w-12 h-12 text-[20px]'
+            }`}>
               4
             </div>
             <div className="flex flex-col">
-              <span className="text-[16px] text-[#032517] font-bold">Ayuda técnica</span>
-              <span className="text-[13px] text-[#424843]">Chat directo con el equipo</span>
+              <span className={`text-[#032517] font-bold ${elderMode ? 'text-[20px] font-extrabold' : 'text-[16px]'}`}>
+                {appLanguage === 'mix' ? "4. Tu'un Tachi (Ayuda Comunitaria)" : "4. Ayuda técnica"}
+              </span>
+              <span className={`text-[#424843] ${elderMode ? 'text-[15px] font-semibold' : 'text-[13px]'}`}>
+                Chat directo con el equipo TecNM
+              </span>
             </div>
           </div>
           {/* WhatsApp / Chat Icon Badge */}
-          <div className="w-10 h-10 rounded-full bg-[#c7ebd4] text-[#032517] flex items-center justify-center shrink-0 group-hover:bg-[#abcfb8] transition-colors">
-            <span className="material-symbols-outlined text-[22px]">chat</span>
+          <div className={`rounded-full bg-[#c7ebd4] text-[#032517] flex items-center justify-center shrink-0 group-hover:bg-[#abcfb8] transition-colors ${
+            elderMode ? 'w-12 h-12' : 'w-10 h-10'
+          }`}>
+            <span className={`material-symbols-outlined ${elderMode ? 'text-[26px]' : 'text-[22px]'}`}>chat</span>
           </div>
         </button>
       </div>

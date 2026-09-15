@@ -310,6 +310,8 @@ export default function App() {
           onOpenPayments={() => setIsPaymentsModalOpen(true)}
           onOpenMap={() => setIsMapModalOpen(true)}
           onOpenMicDiagnostic={() => setIsMicDiagnosticModalOpen(true)}
+          appLanguage={appLanguage}
+          elderMode={elderMode}
           onOpenTechHelp={() => {
             setTargetChatProducer('Equipo de Asistencia Técnica');
             setCurrentTab('chat');
