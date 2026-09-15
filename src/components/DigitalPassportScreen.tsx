@@ -286,6 +286,43 @@ export const DigitalPassportScreen: React.FC<DigitalPassportScreenProps> = ({
             </div>
           )}
 
+          {/* Producer Royalty Clause Card (Soroban Smart Contract) */}
+          <div className="bg-gradient-to-r from-purple-50 via-purple-50/60 to-white rounded-xl p-3.5 border border-purple-300/80 shadow-2xs space-y-2">
+            <div className="flex items-center justify-between border-b border-purple-100 pb-2">
+              <div className="flex items-center gap-2">
+                <span className="text-[20px]">💎</span>
+                <div>
+                  <h3 className="text-[13px] font-extrabold text-purple-950 leading-tight">
+                    Cláusula de Regalías Perpetuas al Productor
+                  </h3>
+                  <p className="text-[10px] text-purple-800">Smart Contract Soroban (Stellar Network)</p>
+                </div>
+              </div>
+              <span className="bg-purple-100 text-purple-900 text-[10px] font-black px-2 py-0.5 rounded-full border border-purple-300">
+                8% Garantizado
+              </span>
+            </div>
+
+            <p className="text-[11px] text-[#424843] leading-relaxed">
+              Este lote cuenta con protección de <strong>Regalía de Origen</strong>: si el café es tostado, empacado y revendido con mayor margen en cafeterías de especialidad de CDMX, Monterrey o el extranjero, el <strong>8% de cada transacción secundaria</strong> se deposita automáticamente a la cuenta de <strong className="text-purple-950">{lot.producerName}</strong>, más un <strong>2% al Fondo Comunal de la Mixteca</strong>.
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 text-[11px] pt-1">
+              <div className="bg-white/80 p-2 rounded-lg border border-purple-150">
+                <span className="text-[10px] uppercase font-bold text-purple-700 block">Regalías Acumuladas</span>
+                <span className="text-[14px] font-black text-purple-950">
+                  +${(lot.royaltyClause?.accumulatedRoyaltiesMxn || 3420).toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN
+                </span>
+              </div>
+              <div className="bg-white/80 p-2 rounded-lg border border-purple-150">
+                <span className="text-[10px] uppercase font-bold text-purple-700 block">Reventas Rastreadas</span>
+                <span className="text-[14px] font-black text-purple-950">
+                  {lot.royaltyClause?.secondarySalesCount || 3} Reventas en Boutiques
+                </span>
+              </div>
+            </div>
+          </div>
+
           {/* Traceability Timeline */}
           <div className="flex flex-col gap-2">
             <h2 className="text-[13px] font-bold text-[#032517] uppercase tracking-wide flex items-center gap-1.5">

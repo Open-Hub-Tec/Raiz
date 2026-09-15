@@ -108,7 +108,17 @@ This record is permanently anchored via:
 - **`manage_data` / `memo_hash`**: On Stellar Horizon transactions for lightweight, costless verification.
 - **Soroban Smart Contract (`LotRegistry.rs`)**: Maintains state machines for certification status, community co-op endorsement, and transfer of custody history.
 
-### 2. Fair Trade Settlement Rails (Phase 2 Roadmap)
+### 2. Perpetual Secondary Royalties for Indigenous Producers (Soroban Smart Contracts)
+
+One of the greatest systemic injustices in agricultural and artisanal supply chains is that **producers capture value only once** at the farmgate or workshop door. When an intermediary or brand resells raw coffee to high-end roasteries for 10x the price, or when an authentic Mixtec handwoven *huipil* is auctioned or resold in luxury galleries for $800+ USD, the original indigenous family receives **$0**.
+
+Raíz breaks this cycle through automated **Perpetual Secondary Royalties** built directly into the Soroban smart contract:
+- **Automatic 8% Royalty on Downstream Commercialization:** Every time a certified lot or artisanal piece is resold, repackaged into specialty editions, or auctioned through authorized fair-trade channels, the smart contract automatically deducts **8% of the transaction volume** and routes it straight to the producer's registered wallet.
+- **2% Community Safeguarding & Tequio Pool:** An additional **2%** is streamed into the community cooperative fund for collective agricultural tools, local seed preservation, and elderly health mutuals.
+- **Anti-Plagiarism & Cultural Attribution:** High-resolution digital weave fingerprints and botanical spectrometry profiles prevent commercial appropriation, ensuring perpetual royalties remain legally anchored to the authentic artisan's lineage.
+- **Cash-Friendly Off-ramping:** Royalties accumulated on Stellar are batch-liquidated through local community partners (Banco del Bienestar / Finabien) so non-technical elders receive cash alerts without touching complex DEX interfaces.
+
+### 3. Fair Trade Settlement Rails (Phase 2 Roadmap)
 Integration with **Stellar Anchors (SEP-24 / SEP-38)** to allow global buyers to deposit stablecoins (USDC) while facilitating automated off-ramping to Mexican Pesos (MXN) directly into local credit unions and savings cooperatives (*Cajas Populares*) without predatory foreign exchange fees.
 
 ---
@@ -135,17 +145,17 @@ Integration with **Stellar Anchors (SEP-24 / SEP-38)** to allow global buyers to
 - [x] Simulated Stellar Horizon Testnet audit sealing workflow.
 - [x] Open-source codebase under MIT License.
 
-### 📍 Milestone 2: Soroban Contracts & Drips Setup *(Current – Drips & SCF Kickoff Target)*
-- [ ] Deploy native Soroban smart contract (`LotRegistry.rs`) to Stellar Testnet.
-- [ ] Public audit explorer viewer linking transaction hashes to StellarExpert.
+### 📍 Milestone 2: Soroban Contracts, Royalties & Drips Setup *(Current – Drips & SCF Kickoff Target)*
+- [ ] Deploy native Soroban smart contract (`LotRegistry.rs`) to Stellar Testnet with automated 8% producer secondary royalty routing.
+- [ ] Public audit explorer viewer linking transaction hashes and royalty distribution events to StellarExpert.
 - [ ] On-field pilot trial with 15 cooperative producers in Tlaxiaco and San Cristóbal Amoltepec.
 - [ ] Setup and verification of Drips stream split for the student engineering guild.
 
 ### 📍 Milestone 3: Real Settlement & Physical Cryptographic Tags *(SCF Build Phase Target)*
-- [ ] Automated generation of printable QR and tamper-proof NFC tags for sacks and bottles.
-- [ ] Non-custodial Stellar wallet onboarding for cooperative treasurers.
+- [ ] Automated generation of printable QR and tamper-proof NFC tags for sacks and bottles with embedded royalty provenance.
+- [ ] Non-custodial Stellar wallet onboarding for cooperative treasurers and automated royalty off-ramping.
 - [ ] Audio prompt localization in indigenous Tu'un Savi (Mixteco language) recorded by native speakers.
-- [ ] Anchor on/off-ramp testing (USDC to MXN).
+- [ ] Anchor on/off-ramp testing (USDC to MXN via Banco del Bienestar / Finabien).
 
 ### 📍 Milestone 4: Regional Cooperative Scale *(Scaling Phase)*
 - [ ] Onboarding of 5 agricultural & artisan cooperatives across Oaxaca and Puebla.

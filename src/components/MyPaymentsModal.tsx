@@ -36,6 +36,11 @@ export const MyPaymentsModal: React.FC<MyPaymentsModalProps> = ({
     0
   );
 
+  const totalRoyalties = MOCK_PAYMENTS.filter((p) => p.paymentType === 'Regalía Perpetua').reduce(
+    (acc, cur) => acc + cur.amount,
+    0
+  );
+
   const handleExecuteSpeiTransfer = () => {
     setIsTransferring(true);
     setTimeout(() => {
@@ -517,26 +522,64 @@ export const MyPaymentsModal: React.FC<MyPaymentsModalProps> = ({
 
         {/* History list */}
         <div className="px-4 pb-4 overflow-y-auto space-y-3 flex-1">
-          <h4 className="text-[13px] font-bold text-[#032517] uppercase tracking-wide">
-            Historial de Recibos
-          </h4>
+          <div className="flex items-center justify-between">
+            <h4 className="text-[13px] font-bold text-[#032517] uppercase tracking-wide">
+              Historial de Recibos y Regalías
+            </h4>
+            {totalRoyalties > 0 && (
+              <span className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 border border-purple-300 flex items-center gap-1">
+                <span>💎</span>
+                <span>${totalRoyalties.toLocaleString('es-MX')} MXN en Regalías</span>
+              </span>
+            )}
+          </div>
+
+          {/* Educational notice about secondary royalties */}
+          <div className="bg-purple-50 border border-purple-200 rounded-xl p-3 text-[11px] text-purple-950 flex items-start gap-2">
+            <span className="text-[18px]">✨</span>
+            <div>
+              <p className="font-bold">Regalías Perpetuas por Reventa en Smart Contract:</p>
+              <p className="text-purple-900">
+                Cada vez que una tostaduría o boutique revende tu café empacado o una galería vende tu textil, el contrato inteligente en Stellar te deposita automáticamente el <strong>8% del valor de reventa</strong>.
+              </p>
+            </div>
+          </div>
+
           {MOCK_PAYMENTS.map((payment) => (
             <div
               key={payment.id}
-              className="bg-white rounded-xl p-3.5 border border-[#c1c8c2]/40 flex flex-col gap-1 shadow-2xs"
+              className={`rounded-xl p-3.5 border flex flex-col gap-1.5 shadow-2xs ${
+                payment.paymentType === 'Regalía Perpetua'
+                  ? 'bg-purple-50/40 border-purple-300/80'
+                  : 'bg-white border-[#c1c8c2]/40'
+              }`}
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-[11px] text-[#a73918] font-bold block">
-                    {payment.lotCode} · {payment.date}
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[11px] text-[#a73918] font-bold block">
+                      {payment.lotCode} · {payment.date}
+                    </span>
+                    {payment.paymentType === 'Regalía Perpetua' && (
+                      <span className="bg-purple-600 text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-full uppercase tracking-wider">
+                        💎 Regalía 8%
+                      </span>
+                    )}
+                  </div>
                   <h5 className="text-[14px] font-bold text-[#032517] leading-snug">
                     {payment.concept}
                   </h5>
                   <p className="text-[12px] text-[#424843]">{payment.buyer}</p>
+                  {payment.resaleOrigin && (
+                    <p className="text-[11px] text-purple-900 font-medium mt-0.5">
+                      📍 Reventa en: {payment.resaleOrigin}
+                    </p>
+                  )}
                 </div>
                 <div className="text-right shrink-0">
-                  <span className="text-[16px] font-bold text-[#032517] block">
+                  <span className={`text-[16px] font-bold block ${
+                    payment.paymentType === 'Regalía Perpetua' ? 'text-purple-950 font-black' : 'text-[#032517]'
+                  }`}>
                     +${payment.amount.toLocaleString('es-MX', { minimumFractionDigits: 2 })}
                   </span>
                   <span

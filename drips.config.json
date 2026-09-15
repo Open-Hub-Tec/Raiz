@@ -67,7 +67,32 @@
       {
         "issueNumber": 2,
         "title": "Elder-Accessible Interactive Prototype Usability Testing with 50 Indigenous Artisans in the Field"
+      },
+      {
+        "issueNumber": 3,
+        "title": "Smart Contract Perpetual Secondary Royalties Engine (8% Direct to Producer / 2% Community Tequio Pool)"
       }
     ]
+  },
+  "producerRoyaltiesPolicy": {
+    "enabled": true,
+    "blockchain": "Stellar / Soroban",
+    "contractModule": "LotRegistry.rs",
+    "description": "Regalías perpetuas por reventas secundarias y comercialización con valor agregado (café tostado de especialidad, textiles exhibidos en galerías). Garantiza que los productores reciban ingresos residuales cada vez que su lote o artesanía genere plusvalía aguas abajo.",
+    "secondaryResaleSplit": {
+      "producerDirectWallet": {
+        "percentage": 8,
+        "description": "8% de cada reventa secundaria o venta en boutiques/tostadurías transferido directamente a la cuenta/billetera del productor o artesano original."
+      },
+      "communityTequioFund": {
+        "percentage": 2,
+        "description": "2% destinado al fondo comunal de la cooperativa local para insumos compartidos, bancos de semillas y apoyo de salud a ancianos."
+      }
+    },
+    "offRamping": {
+      "channel": "Banco del Bienestar / Finabien / Cajas Populares de la Mixteca",
+      "payoutCurrency": "MXN",
+      "trigger": "Liquidación automática vía Stellar Anchors (SEP-24 / SEP-38)"
+    }
   }
 }

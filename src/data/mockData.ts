@@ -184,6 +184,13 @@ export const INITIAL_VERIFIED_LOTS: DigitalPassportLot[] = [
       stellarTxHash: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
       stellarTimestamp: '2024-10-28T16:42:19Z',
       immutableSealStatus: 'Sellado Inmutable'
+    },
+    royaltyClause: {
+      percentage: 8,
+      beneficiary: 'Don Efraín Bautista Santiago',
+      smartContractPolicy: 'Soroban Perpetual Royalty Standard (8% reventas secundarias / 2% fondo comunal)',
+      accumulatedRoyaltiesMxn: 3420.0,
+      secondarySalesCount: 3
     }
   },
   {
@@ -230,7 +237,32 @@ export const MOCK_PAYMENTS: PaymentRecord[] = [
     lotCode: 'MX-2024-884',
     amount: 18900.0,
     status: 'Disponible',
-    buyer: 'Comercializadora Comunitaria Oaxaca Justo'
+    buyer: 'Comercializadora Comunitaria Oaxaca Justo',
+    paymentType: 'Venta Directa'
+  },
+  {
+    id: 'pay-royalty-1',
+    date: '05 Nov 2024',
+    concept: 'Regalía Perpetua (8%) · Reventa Café Tostado de Especialidad en CDMX',
+    lotCode: 'MX-2024-740',
+    amount: 1840.0,
+    status: 'Disponible',
+    buyer: 'Café de Origen Roma Norte (Reventa Lote Fraccionado)',
+    paymentType: 'Regalía Perpetua',
+    royaltyRate: '8% s/ $23,000 MXN',
+    resaleOrigin: 'Boutique Tostadora Roma Norte, CDMX'
+  },
+  {
+    id: 'pay-royalty-2',
+    date: '18 Nov 2024',
+    concept: 'Regalía Perpetua (8%) · Reventa Lote Café Tostado en Monterrey',
+    lotCode: 'MX-2024-740',
+    amount: 1580.0,
+    status: 'Disponible',
+    buyer: 'Barra de Especialidad Sierra Madre',
+    paymentType: 'Regalía Perpetua',
+    royaltyRate: '8% s/ $19,750 MXN',
+    resaleOrigin: 'Barra Sierra Madre, San Pedro Garza García'
   },
   {
     id: 'pay-2',
@@ -239,7 +271,8 @@ export const MOCK_PAYMENTS: PaymentRecord[] = [
     lotCode: 'MX-2024-740',
     amount: 8500.0,
     status: 'Completado',
-    buyer: 'Tostaduría de Especialidad Raíz Mixteca'
+    buyer: 'Tostaduría de Especialidad Raíz Mixteca',
+    paymentType: 'Anticipo'
   },
   {
     id: 'pay-3',
@@ -248,6 +281,7 @@ export const MOCK_PAYMENTS: PaymentRecord[] = [
     lotCode: 'MX-2024-601',
     amount: 5400.0,
     status: 'Completado',
-    buyer: 'Molino Tradicional San Pedro'
+    buyer: 'Molino Tradicional San Pedro',
+    paymentType: 'Venta Directa'
   }
 ];

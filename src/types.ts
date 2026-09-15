@@ -75,6 +75,13 @@ export interface DigitalPassportLot {
     stellarTimestamp?: string;
     immutableSealStatus?: 'Sellado Inmutable' | 'Pendiente';
   };
+  royaltyClause?: {
+    percentage: number;
+    beneficiary: string;
+    smartContractPolicy: string;
+    accumulatedRoyaltiesMxn?: number;
+    secondarySalesCount?: number;
+  };
 }
 
 export interface PaymentRecord {
@@ -85,6 +92,9 @@ export interface PaymentRecord {
   amount: number;
   status: 'Completado' | 'En proceso' | 'Disponible';
   buyer: string;
+  paymentType?: 'Venta Directa' | 'Regalía Perpetua' | 'Anticipo';
+  royaltyRate?: string;
+  resaleOrigin?: string;
 }
 
 export interface ChatMessage {
